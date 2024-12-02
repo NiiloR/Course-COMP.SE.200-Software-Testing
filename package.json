@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "coveralls": "jest --coverage && cat .test/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage"
   },
   "jest": {
     "transform": {}
