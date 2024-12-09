@@ -1,2 +1,4 @@
 # Course-COMP.SE.200-Software-Testing
 Repository for group exercise on Tampere university course COMP.SE.200 Software testing. The repository is used to store project code as well as for practicing setting up pipelines with GitHub actions.
+
+[![Coverage Status](https://coveralls.io/repos/github/NiiloR/Course-COMP.SE.200-Software-Testing/badge.svg?branch=main)](https://coveralls.io/github/NiiloR/Course-COMP.SE.200-Software-Testing?branch=main)
