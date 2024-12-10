@@ -11,7 +11,45 @@
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest" 
-    }
+    },
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "./src/.internal/*/",
+      "./src/add.js",
+      "./src/at.js",
+      "./src/camelCase.js",
+      "./src/castArray.js",
+      "./src/chunk.js",
+      "./src/clamp.js",
+      "./src/compact.js",
+      "./src/countBy.js",
+      "./src/defaultToAny.js",
+      "./src/difference.js",
+      "./src/divide.js",
+      "./src/drop.js",
+      "./src/every.js",
+      "./src/get.js",
+      "./src/isArguments.js",
+      "./src/isArrayLikeObject.js",
+      "./src/isBoolean.js",
+      "./src/isBuffer.js",
+      "./src/isDate.js",
+      "./src/isEmpty.js",
+      "./src/isLength.js",
+      "./src/isObject.js",
+      "./src/isObjectLike.js",
+      "./src/isSymbol.js",
+      "./src/isTypedArray.js",
+      "./src/keys.js",
+      "./src/memoize.js",
+      "./src/reduce.js",
+      "./src/slice.js",
+      "./src/toFinite.js",
+      "./src/toNumber.js",
+      "./src/toString.js",
+      "./src/upperFirst.js"
+    ]
   },
   "babel": {
     "presets": ["@babel/preset-env"]
