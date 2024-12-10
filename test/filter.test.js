@@ -13,23 +13,23 @@ describe('filter', () => {
     })
 
     test('Filtering numbers', () => {
-        expect(filter([1, 2, 3, 4, 5], (n) => {n > 2})).toEqual[3, 4, 5]
-        expect(filter([1, 2, 3, 4, 5], (n) => {n})).toEqual([1, 2, 3, 4, 5]) // Allways true
-        expect(filter([1, 2, 3, 4, 5], (n) => {n < 1 && n > 5})).toEqual([]) // Never true filter term
+        expect(filter([1, 2, 3, 4, 5], n => n > 2)).toEqual[3, 4, 5]
+        expect(filter([1, 2, 3, 4, 5], n => n)).toEqual([1, 2, 3, 4, 5]) // Allways true
+        expect(filter([1, 2, 3, 4, 5], n => n < 1 && n > 5)).toEqual([]) // Never true filter term
     })
     
     test('Filtering strings', () => {
-        expect(filter('string string string', (n) => {n.includes('s') || n.includes('i')})).toEqual(['s', 'i', 's', 'i', 's', 'i' ])
-        expect(filter(['test', 'are', 'being', 'done', 'rarely'], (n) => {n.includes('re')})).toEqual(['are', 'rarely'])
+        expect(filter('string string string', n => n.includes('s') || n.includes('i'))).toEqual(['s', 'i', 's', 'i', 's', 'i' ])
+        expect(filter(['test', 'are', 'being', 'done', 'rarely'], n => n.includes('re'))).toEqual(['are', 'rarely'])
     })
 
     test('Filtering term that does not return boolean', () => {
-        expect(filter([1, 2, 3], (n) => {n * n})).toEqual([])
-        expect(filter([1, 2, 3], (n) => {n + 1})).toEqual([])
+        expect(filter([1, 2, 3], n => NaN)).toEqual([])
+        expect(filter([1, 2, 3], n => undefined)).toEqual([])
     })
     
 
     test('Using incompatible filtering term with array', () => {
-        expect(filter(['word', 'another', 'word2'], (n) => {n * n})).toEqual([])
+        expect(filter(['word', 'another', 'word2'], n => n * n)).toEqual([])
     })
 })
