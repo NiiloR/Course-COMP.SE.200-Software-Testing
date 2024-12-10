@@ -26,26 +26,32 @@ describe('words', () => {
     expect(words('', /[^, ]+/g)).toEqual([])
     expect(words('')).toEqual([])
   })
-
+/*
+  test('throws on octopus', () => {
+    expect(() => {
+      drinkFlavor('octopus');
+    }).toThrow();
+  });
+*/
   test('Number input with and without pattern', () => {
-    expect(words(9000)).toThrow()
-    expect(words(9000, /[]+/g)).toThrow();
+    expect(() => {words(9000)}).toThrow()
+    expect(() => {words(9000, /[]+/g)}).toThrow();
   })
 
   test('Function input with and without pattern', () => {
-    expect(words(()=> {['a','b']}, /[]+/g)).toThrow()
-    expect(words(()=> {['a','b']})).toThrow()
+    expect(() => {words(()=> {['a','b']}, /[]+/g)}).toThrow()
+    expect(() => {words(()=> {['a','b']})}).toThrow()
   })
 
   test('Object input with and without pattern', () => {
     const obj = {name: 'Devin', occupation: 'tester'}
-    expect(words(obj)).toThrow()
-    expect(words(obj, /[]+/g)).toThrow()
+    expect(() => {words(obj)}).toThrow()
+    expect(() => {words(obj, /[]+/g)}).toThrow()
   })
   
   test('Array input with and without pattern', () => {
-    expect(words(['a', 'b'])).toThrow()
-    expect(words(['a', 'b'], /[]+/g)).toThrow();
+    expect(() => {words(['a', 'b'])}).toThrow()
+    expect(() => {words(['a', 'b'], /[]+/g)}).toThrow();
   }) 
 
 });

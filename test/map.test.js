@@ -24,11 +24,11 @@ describe('map', () => {
     })
 
     test('NaN function', () => {
-        expect(map([1, 2, 3], NaN)).toThrow()
+        expect(() => {map([1, 2, 3], NaN)}).toThrow()
     })
 
     test('undefined function', () => {
-        expect(map([1, 2, 3], undefined)).toThrow()
+        expect(() => {map([1, 2, 3], undefined)}).toThrow()
     })
 
     test('Non-array input to iterate over', () => {
