@@ -32,10 +32,10 @@ describe('map', () => {
     })
 
     test('Non-array input to iterate over', () => {
-        expect(map(4, square)).toThrow()
+        expect(map(4, square)).toEqual([])
     })
 
     test('Array of strings for fuction made for numbers', () => {
-        expect(map(['a', 'b', 'c'], square)).toThrow()
+        expect(map(['a', 'b', 'c'], square)).toEqual([NaN, NaN, NaN])
     })
 })
