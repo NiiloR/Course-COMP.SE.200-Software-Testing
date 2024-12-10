@@ -13,7 +13,6 @@ describe('eq', () => {
     expect(eq(1, 2)).toBe(false);
     expect(eq('a', 'b')).toBe(false);
     expect(eq(true, false)).toBe(false);
-    expect(eq(null, undefined)).toBe(false);
   });
 
   test('handles object references correctly', () => {
@@ -42,6 +41,7 @@ describe('eq', () => {
   });
 
   test('returns false for different data types', () => {
+    expect(eq(1, 'abc')).toBe(false);
     expect(eq(1, '1')).toBe(false); // Loose equality not used
     expect(eq(true, 1)).toBe(false);
     expect(eq(null, 0)).toBe(false);
@@ -63,6 +63,7 @@ describe('eq', () => {
   test('handles undefined and null edge cases', () => {
     expect(eq(undefined, undefined)).toBe(true);
     expect(eq(null, null)).toBe(true);
+    expect(eq(null, undefined)).toBe(false);
     expect(eq(undefined, null)).toBe(false);
     expect(eq(undefined, 0)).toBe(false);
     expect(eq(null, '')).toBe(false);

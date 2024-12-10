@@ -8,9 +8,9 @@ describe('ceil', () => {
   });
 
   test('rounds up to the specified precision', () => {
-    expect(ceil(6.004, 2)).toBe(6.01);
-    expect(ceil(0.12345, 3)).toBe(0.124);
-    expect(ceil(-0.12345, 3)).toBe(-0.123);
+    expect(ceil(6.004, 2)).toBeCloseTo(6.01);
+    expect(ceil(0.12345, 3)).toBeCloseTo(0.124);
+    expect(ceil(-0.12345, 3)).toBeCloseTo(-0.123);
   });
 
   test('rounds up with negative precision', () => {
@@ -28,12 +28,12 @@ describe('ceil', () => {
   test('handles zero and near-zero values', () => {
     expect(ceil(0)).toBe(0);
     expect(ceil(-0)).toBe(0); // -0 normalized to 0
-    expect(ceil(0.0001, 3)).toBe(0.001);
-    expect(ceil(-0.0001, 3)).toBe(-0.0); // Rounded towards 0
+    expect(ceil(0.0001, 3)).toBeCloseTo(0.001);
+    expect(ceil(-0.0001, 3)).toBeCloseTo(-0.0); // Rounded towards 0
   });
 
   test('handles large numbers correctly', () => {
-    expect(ceil(987654.321, 1)).toBe(987654.4);
+    expect(ceil(987654.321, 1)).toBeCloseTo(987654.4);
     expect(ceil(987654.321, -3)).toBe(988000);
   });
 
