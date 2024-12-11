@@ -19,6 +19,15 @@ describe('map', () => {
         expect(map([], square)).toEqual([])
     })
 
+    test('NaN array', () => {
+        expect(map(NaN, square)).toEqual([])
+    })
+
+    test('Undefined array', () => {
+        expect(map(undefined, square)).toEqual([])
+    })
+
+
     test('Function to divide with zero', () => {
         expect(map([1, 2, 3], divideByZero)).toEqual([Infinity, Infinity, Infinity])
     })

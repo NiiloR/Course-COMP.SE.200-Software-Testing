@@ -28,6 +28,13 @@ describe('filter', () => {
         expect(filter([1, 2, 3], n => undefined)).toEqual([])
     })
     
+    test('Passing NaN array', () => {
+        expect(filter(NaN, n => n > 0)).toEqual([])
+    })
+
+    test('Passing undefined array', () => {
+        expect(filter(undefined, n => n > 0)).toEqual([])
+    })
 
     test('Using incompatible filtering term with array', () => {
         expect(filter(['word', 'another', 'word2'], n => n * n)).toEqual([])
