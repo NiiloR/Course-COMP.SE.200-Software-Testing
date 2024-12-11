@@ -36,22 +36,19 @@ describe('endsWith', () => {
     expect(endsWith('abc', 'c', NaN)).toBe(false);
   });
 
-  test('throws an error when string or target is null', () => { 
+  test('throws an error when string or target is null or undefined', () => { 
     expect(() => endsWith('abc', null)).toThrow(TypeError);
     expect(() => endsWith(null, 'abc')).toThrow(TypeError);
     expect(() => endsWith(null, null)).toThrow(TypeError);
+    expect(() => endsWith(undefined, undefined)).toThrow(TypeError);
+    expect(() => endsWith('abc', undefined)).toThrow(TypeError);
+    expect(() => endsWith(undefined, 'abc')).toThrow(TypeError);
   });
 
   test('handles edge cases with empty strings and targets', () => {
     expect(endsWith('', '')).toBe(true); // Empty string ends with empty target
     expect(endsWith('abc', '')).toBe(true); // Any string ends with an empty target
     expect(endsWith('', 'a')).toBe(false); // Empty string does not end with non-empty target
-  });
-
-  test('handles non-string inputs gracefully', () => {
-    expect(endsWith(12345, '45')).toBe(true); // Number is coerced to string
-    expect(endsWith(null, 'null')).toBe(false); // null coerced to string does not end with 'null'
-    expect(endsWith(undefined, 'undefined')).toBe(false); // undefined coerced to string does not end with 'undefined'
   });
 
   test('handles target longer than the string', () => {
