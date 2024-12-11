@@ -4,3 +4,5 @@ Repository for group exercise on Tampere university course COMP.SE.200 Software 
 # Coveralls coverage: 
 
 [![Coverage Status](https://coveralls.io/repos/github/NiiloR/Course-COMP.SE.200-Software-Testing/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/NiiloR/Course-COMP.SE.200-Software-Testing?branch=main)
+
+{<img src="https://coveralls.io/repos/github/NiiloR/Course-COMP.SE.200-Software-Testing/badge.svg?branch=main" alt="Coverage Status" />}[https://coveralls.io/github/NiiloR/Course-COMP.SE.200-Software-Testing?branch=main]
